@@ -9,22 +9,20 @@
 <body>
     
    
-<form action="9.php" method="post">
-    <p>Year: <textarea name="year"></textarea></p>
-    <p><input type="submit" /></p>
-    </form>
+<form action="9.php">
+                <textarea name="year" id="year" cols="30" rows="10"></textarea>
+                <input type="submit">
+            </form>
 
-    
-
-    <?php
-        $year = $_POST["year"];
-        $allS =  str_word_count($year);
-        $allW2 = count(str_split($year));
-        $asd = substr_count($year," ");
-        echo "<p>{$allS}</p>";
-        echo "<p>{$allW2}</p>";
-        echo "<p>{$asd}</p>";
-    ?>
+            <?php
+                $ta = $_GET['year'];
+                $taWithOutSpace = str_replace(array(" "), '', $ta);
+                echo "Количество символов с пробелами: " . mb_strlen($ta, 'utf-8');
+            ?>
+            <br>
+            <?php
+                echo "Количество символов без пробелов: " . mb_strlen($taWithOutSpace, 'utf-8');
+            ?>
     <div>
 
         
